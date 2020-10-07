@@ -1,6 +1,118 @@
-/******************
- * YOUR CODE HERE *
- ******************/
+// /******************
+//  * YOUR CODE HERE *
+//  ******************/
+function xify(str) {
+  let newStr = '';
+
+  for (let i = 0; i < str.length; i++) {
+    newStr = newStr + 'x';
+  }
+
+  return newStr;
+}
+
+let result1 = xify('hello' || 'hi there');
+result1;
+
+function smilify(str) {
+  let newStr = '';
+
+  for (let i = 0; i < str.length; i++) {
+    newStr = newStr + '😊';
+  }
+  return newStr;
+}
+
+let result2 = smilify('emoji || smile');
+
+function yellingChars(str) {
+  let newStr = '';
+
+  for (let i = 0; i < str.length; i++) {
+    newStr = newStr + str[i] + "!";
+  }
+  return newStr;
+}
+
+let result3 = yellingChars('goodness || oh hello');
+result3;
+
+
+function indexedChars(str) {
+  let newStr = '';
+
+  for (let i = 0; i < str.length; i++) {
+    newStr = newStr + (i) + str[i];
+    // console.log(i)
+    // console.log(str[i])
+  }
+  return newStr;
+}
+
+let result4 = indexedChars('hello');
+result4;
+
+
+function numberedChars(str) {
+  let newStr = '';
+
+  for (let i = 0; i < str.length; i++) {
+    newStr = newStr + '('+(i+1)+')' + str[i];
+  }
+  return newStr;
+}
+
+let result5 = numberedChars('hello');
+result5;
+
+
+function exclaim(str) {
+  let newStr = '';
+
+  for (let i = 0; i < str.length; i++) {
+    newStr = newStr + str[i];
+  }
+  return newStr;
+}
+
+let result6 = exclaim('What are you doing? Are you a fool?')
+result6;
+
+function reverse(str) {
+  let newStr = '';
+
+  for (let i = 0; i < str.length; i++) {
+    newStr = str[i] + newStr;
+  }
+  return newStr;
+}
+
+let result7 = reverse('colin')
+result7;
+
+function repeatIt(str, num) {
+  let newStr = '';
+
+  for (let i = 0; i < str.length; i++) {
+    newStr = newStr + str[i];
+  }
+  return newStr;
+}
+
+let result8 = repeatIt('beetlejuice', 3)
+result8;
+
+function truncate(str) {
+  let newStr = '';
+
+  for (let i = 0; i < str.length; i++) {
+    newStr = newStr + str[i];
+  }
+  return newStr;
+}
+
+let result9 = truncate("Well, that's just, like, your opinion man.")
+result9;
 
 
 
@@ -10,10 +122,16 @@
 
 
 
- /********************************************
- * CODE DOWN HERE IS FOR INTERNAL USE ONLY. *
- *           PLEASE DON'T TOUCH!            *
- ********************************************/
+
+
+
+
+
+
+/********************************************
+* CODE DOWN HERE IS FOR INTERNAL USE ONLY. *
+*           PLEASE DON'T TOUCH!            *
+********************************************/
 
 if (typeof xify === 'undefined') {
   xify = undefined;
@@ -76,6 +194,7 @@ module.exports = {
   xify,
   smilify,
   indexedChars,
+  yellingChars,
   numberedChars,
   exclaim,
   repeatIt,
