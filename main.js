@@ -2,118 +2,128 @@
 //  * YOUR CODE HERE *
 //  ******************/
 function xify(str) {
-  let newStr = '';
+  let result = '';
 
   for (let i = 0; i < str.length; i++) {
-    newStr = newStr + 'x';
+    result = result + 'x';
   }
-
-  return newStr;
+  return result;
 }
-
-let result1 = xify('hello' || 'hi there');
-result1;
-
+// the character is hard coded 
 function smilify(str) {
-  let newStr = '';
+  let result = '';
 
   for (let i = 0; i < str.length; i++) {
-    newStr = newStr + '😊';
+    result = result + '😊';
   }
-  return newStr;
+  return result;
 }
-
-let result2 = smilify('emoji || smile');
-
+// always building a new string 
 function yellingChars(str) {
-  let newStr = '';
+  let result = '';
 
   for (let i = 0; i < str.length; i++) {
-    newStr = newStr + str[i] + "!";
+    result = result + str[i] + '!';
   }
-  return newStr;
+  return result;
 }
-
-let result3 = yellingChars('goodness || oh hello');
-result3;
-
-
+// 0!1!2!3!4! --> result + [i] + '!';
+// adding this character plus current character
 function indexedChars(str) {
-  let newStr = '';
+  let result = '';
 
   for (let i = 0; i < str.length; i++) {
-    newStr = newStr + (i) + str[i];
-    // console.log(i)
-    // console.log(str[i])
+    result = result + i + str[i];
   }
-  return newStr;
+  return result;
 }
-
-let result4 = indexedChars('hello');
-result4;
-
 
 function numberedChars(str) {
-  let newStr = '';
-
+  let result = '';
   for (let i = 0; i < str.length; i++) {
-    newStr = newStr + '('+(i+1)+')' + str[i];
+    result = result + '(' + (i + 1) + ')' + str[i];
   }
-  return newStr;
+  return result;
 }
-
-let result5 = numberedChars('hello');
-result5;
-
+// you can't make string into number very easily
+// you can make a number into a sting with quotations 
 
 function exclaim(str) {
-  let newStr = '';
+  let result = '';
 
   for (let i = 0; i < str.length; i++) {
-    newStr = newStr + str[i];
+    if (str[i] === '?' || str[i] === '.') {
+      result = result + '!';
+    } else {
+      result = result + str[i];
+    }
   }
-  return newStr;
+  return result;
 }
+// line 58 is current copy if line 55 is not true 
+// line 55 is saying if their are no '?' or '.' return current copy
+// if it is true return current copy with '!' instead
 
-let result6 = exclaim('What are you doing? Are you a fool?')
-result6;
-
-function reverse(str) {
-  let newStr = '';
-
-  for (let i = 0; i < str.length; i++) {
-    newStr = str[i] + newStr;
+function repeatIt(str, max) {
+  let result = '';
+  let count = 0;
+  while (count < max) {
+    result = result + str;
+    count = count + 1;
   }
-  return newStr;
+  return result;
 }
-
-let result7 = reverse('colin')
-result7;
-
-function repeatIt(str, num) {
-  let newStr = '';
-
-  for (let i = 0; i < str.length; i++) {
-    newStr = newStr + str[i];
-  }
-  return newStr;
-}
-
-let result8 = repeatIt('beetlejuice', 3)
-result8;
+// (while loop) is perfect for this - also how we would solve count sheep
+// while loop is best for repeating a string
 
 function truncate(str) {
-  let newStr = '';
-
-  for (let i = 0; i < str.length; i++) {
-    newStr = newStr + str[i];
+  if (str.length < 18) {
+    return str;
   }
-  return newStr;
+
+  let result = '';
+  for (let i = 0; i < 15; i++) {
+    result = result + str[i];
+  }
+
+  result = result + '...'
+  return result;
 }
 
-let result9 = truncate("Well, that's just, like, your opinion man.")
-result9;
+function ciEmailify(str) {
+  let result = '';
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === ' ') {
+      result = result + '.';
+    } else {
+      result = result + str[i];
+    }
+  }
+  return result.toLocaleLowerCase() + '@codeimmersives.com';
+  // Ternary version 
+  // for (let i = 0; i < str.length; i++) {
+  // result = result + str[i] === ' ' ?
+}
 
+function reverse(str) {
+  let result = '';
+
+  for (let i = 0; i < str.length; i++) {
+    result = str[i] + result;
+  }
+  return result;
+}
+
+function onlyVowels(str) {
+  let result = '';
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i].toLowerCase();
+    if (char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') {
+      result = result + str[i];
+    }
+  }
+  return result;
+}
 
 
 
@@ -193,8 +203,8 @@ if (typeof crazyCase2ReturnOfCrazyCase === 'undefined') {
 module.exports = {
   xify,
   smilify,
-  indexedChars,
   yellingChars,
+  indexedChars,
   numberedChars,
   exclaim,
   repeatIt,
