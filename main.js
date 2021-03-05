@@ -10,16 +10,26 @@ xify = (str) => {
   return result;
 }
 
+smilify = (str) => {
+  let result = '';
 
+  for (let i = 0; i < str.length; i++) {
+    result = result + "😊"
+  }
+  return result; 
+}
 
-
-function yellingChars(str) {
+yellingChars = (str) => {
   let result = '';
 
   for (let i = 0; i < str.length; i++) {
     result = result + str[i] + '!';
   }
   return result;
+}
+
+indexedChars = () => {
+
 }
 
 
