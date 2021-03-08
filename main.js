@@ -129,7 +129,13 @@ numberedChars = (str) => {
 
 crazyCase = (str) => {
   let result = "";
+  
+  for (i = 0; i < str.length; i++) {
+    result += i % 2 == 0 ? str.charAt(i).toUpperCase() : str.charAt(i);
+  }
+  return result;  
 }
+
 
 titleCase = (str) => {
   str = str.toLowerCase().split(' ');
